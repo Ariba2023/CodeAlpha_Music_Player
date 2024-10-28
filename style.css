@@ -67,7 +67,23 @@ button:hover {
 }
 
 input[type="range"] {
+  -webkit-appearance: none;
   width: 100%;
+  margin: 50px auto;
+  height: 8px;
+  border-radius: 4px;
+  border: 2px solid black;
+  margin-bottom: 15px;
+  background-color: transparent;
+}
+input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: rgba(10, 9, 9, 0.545);
+  overflow: visible;
+  cursor: pointer;
 }
 .input-track {
   width: 50%;
