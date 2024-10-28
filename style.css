@@ -1,8 +1,8 @@
 body {
-  background: linear-gradient(210deg, orange, purple, orange);
+  background: linear-gradient(210deg, orange,purple);
 
   color: white;
-  font-family: Arial, sans-serif;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,7 +11,7 @@ body {
 }
 
 .player {
-  background: linear-gradient(210deg, purple, orange, purple);
+  background: linear-gradient(210deg, orange,purple );
   text-align: center;
   padding: 20px;
   border-radius: 10px;
@@ -23,17 +23,18 @@ body {
 h1 {
   color: black;
   font-weight: bold;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  font-family: "DynaPuff", system-ui;
   font-size: 40px;
- text-decoration: underline;
+  text-decoration:line-through;
 }
-h2,#track-title {
-    color: black;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-size: 30px;
-   text-decoration: underline;
-  }
+h2,
+#track-title {
+  color: black;
+  font-weight: bold;
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+  text-decoration: underline;
+}
 
 img {
   width: 100px;
@@ -47,8 +48,8 @@ img {
 }
 
 button {
-  background: rgba(46, 39, 39, 0.321);
-  border: none;
+  background: transparent;
+  border: 2px solid black;
   border-radius: 5px;
   padding: 10px 15px;
   cursor: pointer;
@@ -68,14 +69,25 @@ button:hover {
 input[type="range"] {
   width: 100%;
 }
+.input-track {
+  width: 50%;
+  height: 33px;
+  border-radius: 5px;
+  background-color: transparent;
+  border: 2px solid black;
+  color: white;
+}
+::placeholder {
+  color: white;
+}
 
 .volume {
   margin: 20px 0;
   color: black;
-    font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-    font-size: 30px;
-   text-decoration: underline;
+  font-weight: bold;
+  font-family: "Caveat", cursive;
+  font-size: 30px;
+  text-decoration: underline;
 }
 
 .playlist {
