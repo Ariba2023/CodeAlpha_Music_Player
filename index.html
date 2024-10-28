@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="player">
+      <h1>Music Player</h1>
+
+      <div class="track-info">
+        <span id="track-title">Track Title</span><br />
+      </div>
+      <div class="controls">
+        <button id="prev">Prev</button>
+        <button id="play">Play</button>
+        <button id="next">Next</button>
+      </div>
+
+      <div class="volume">
+        <label for="volume">Volume: </label>
+        <input
+          type="range"
+          id="volume"
+          value="100"
+          step="1"
+          min="0"
+          max="100"
+        />
+      </div>
+      <div class="playlist">
+        <h2>Playlist</h2>
+        <ul id="track-list"></ul>
+        <input type="text" id="new-track" placeholder="Add Track URL" />
+        <button id="add-track">Add Track</button>
+      </div>
+      <div class="volume-presets">
+        <h2>Volume Presets</h2>
+        <button class="preset" data-volume="30">Low</button>
+        <button class="preset" data-volume="70">Medium</button>
+        <button class="preset" data-volume="100">High</button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
