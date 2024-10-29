@@ -5,8 +5,7 @@
   --dark-color: #363537;
   --light-color: #fff;
   --gray-color: #efefef;
-  --width: 1200px;
-  
+  --width: 1300px;
 }
 
 * {
@@ -20,7 +19,16 @@ body {
   min-height: 100svh;
   display: grid;
   place-items: center;
-  background:linear-gradient(230deg,white,orange,orange,white,orange,orange);
+  background: linear-gradient(
+    230deg,
+    white,
+    orange,
+    orange,
+    white,
+    orange,
+    orange
+    
+  );
   color: var(--dark-color);
 }
 
@@ -34,9 +42,13 @@ button {
 button:active,
 button:hover {
   color: var(--main-color);
-  color: white;
 }
 
+.NowPlay{
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
 input {
   appearance: none;
   background-color: var(--gray-color);
@@ -64,14 +76,14 @@ input::-webkit-slider-thumb {
 }
 
 .player {
-  background:linear-gradient(230deg ,orange,orange,white,orange);
+  background: linear-gradient(230deg,white, orange, orange, white, orange);
   width: 90%;
   max-width: var(--width);
   padding: 20px;
   border-radius: 10px;
   display: grid;
   gap: 20px;
-  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.25);
+  box-shadow: 30px 10px 40px 40px rgba(0, 0, 0, 0.25);
   position: relative;
   overflow: hidden;
   height: 600px;
@@ -85,13 +97,16 @@ input::-webkit-slider-thumb {
 }
 
 .header .bi {
-  font-size: 1.25rem;
+  font-size: 1.50rem;
 }
 
 .track-info {
   text-align: center;
 }
 
+#hide{
+  visibility: hidden;
+}
 .track-info img {
   width: 200px;
   height: 200px;
@@ -101,9 +116,11 @@ input::-webkit-slider-thumb {
 
 .track-info .name {
   font-size: 1.25rem;
-  font-weight: 500;
-  color: var(--main-color);
+  color: var(--dark-color);
   margin-block: 20px 5px;
+  font-family: "Rubik Wet Paint", system-ui;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .track-info .artist {
@@ -181,26 +198,23 @@ input::-webkit-slider-thumb {
 }
 
 .playlist.show {
-  
   transform: none;
-
 }
 
-
+/* 
 .playlist-header {
   position: relative;
   text-align: center;
   font-size: 1.25rem;
-}
+} */
 
-.playlist-header button {
-  font-size: 1.25rem;
+.hide {
+  font-size: 1.6rem;
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
 }
-
 
 .playlist-content {
   overflow: hidden auto;
@@ -258,7 +272,6 @@ input::-webkit-slider-thumb {
   align-items: center;
   justify-content: center;
 }
-
 
 .playlist-header {
   display: flex;
