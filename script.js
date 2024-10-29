@@ -1,6 +1,6 @@
 //* state
 
-const state = { activeTrack: 0, initPlay: false };
+// const state = { activeTrack: 0, initPlay: false };
 
 //* selectors
 
@@ -29,6 +29,7 @@ const ui = {
 };
 
 //* event listeners
+
 
 const setupEventListeners = () => {
   document.addEventListener("DOMContentLoaded", loadTrack);
@@ -121,28 +122,87 @@ const hidePlayList = () => {
   ui.playList.classList.remove("show");
 };
 
+// const renderPlayList = () => {
+//   ui.playListContent.innerHTML = "";
+
+//   tracks.forEach((track, index) => {
+//     const isActive = index === state.activeTrack;
+//     const icon = audio.paused ? "bi-play-fill" : "bi-pause-fill";
+
+//     const item = document.createElement("div");
+//     item.classList.add("item");
+//     item.classList.toggle("active", isActive);
+//     item.addEventListener("click", () => playTrack(index));
+//     item.innerHTML = `
+//     <img src="${track.artwork}" alt="${track.name}" />
+//     <div class="item-detail">
+//       <h4>${track.name}</h4>
+//       <p>${track.artist}</p>
+//     </div>
+//     ${isActive ? `<button><i class="bi ${icon}"></i></button>` : ""}`;
+
+//     ui.playListContent.appendChild(item);
+//   });
+// };
+
+setupEventListeners();
+
+
+// Additional state for search and category
+const state = {
+  activeTrack: 0,
+  initPlay: false,
+  searchQuery: '',
+  categoryFilter: 'all',
+};
+
+// Update renderPlayList function
 const renderPlayList = () => {
-  ui.playListContent.innerHTML = "";
+  ui.playListContent.innerHTML = '';
 
-  tracks.forEach((track, index) => {
+  const filteredTracks = tracks.filter(track => {
+    const matchesSearch = track.name.toLowerCase().includes(state.searchQuery.toLowerCase());
+    const matchesCategory = state.categoryFilter === 'all' || track.category === state.categoryFilter;
+    return matchesSearch && matchesCategory;
+  });
+
+  filteredTracks.forEach((track, index) => {
     const isActive = index === state.activeTrack;
-    const icon = audio.paused ? "bi-play-fill" : "bi-pause-fill";
+    const icon = audio.paused ? 'bi-play-fill' : 'bi-pause-fill';
 
-    const item = document.createElement("div");
-    item.classList.add("item");
-    item.classList.toggle("active", isActive);
-    item.addEventListener("click", () => playTrack(index));
+    const item = document.createElement('div');
+    item.classList.add('item');
+    item.classList.toggle('active', isActive);
+    item.addEventListener('click', () => playTrack(index));
     item.innerHTML = `
-    <img src="${track.artwork}" alt="${track.name}" />
-    <div class="item-detail">
-      <h4>${track.name}</h4>
-      <p>${track.artist}</p>
-    </div>
-    ${isActive ? `<button><i class="bi ${icon}"></i></button>` : ""}`;
+      <img src="${track.artwork}" alt="${track.name}" />
+      <div class="item-detail">
+        <h4>${track.name}</h4>
+        <p>${track.artist}</p>
+      </div>
+      ${isActive ? `<button><i class="bi ${icon}"></i></button>` : ''}`;
 
     ui.playListContent.appendChild(item);
   });
 };
 
+// Event listeners for search and category
+const setupSearchAndFilter = () => {
+  const searchInput = document.querySelector('.search');
+  const categoryFilter = document.querySelector('.category-filter');
+
+  searchInput.addEventListener('input', (e) => {
+    state.searchQuery = e.target.value;
+    renderPlayList();
+  });
+
+  categoryFilter.addEventListener('change', (e) => {
+    state.categoryFilter = e.target.value;
+    renderPlayList();
+  });
+};
+
+
 renderPlayList();
-setupEventListeners();
+// Call the new setup function
+setupSearchAndFilter();

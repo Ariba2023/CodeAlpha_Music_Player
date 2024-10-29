@@ -258,3 +258,25 @@ input::-webkit-slider-thumb {
   align-items: center;
   justify-content: center;
 }
+
+
+.playlist-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.search {
+  margin-left: 20px;
+  padding: 5px;
+  border: 1px solid var(--gray-color);
+  border-radius: 5px;
+}
+
+.category-filter {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid var(--gray-color);
+  border-radius: 5px;
+}
