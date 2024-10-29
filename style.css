@@ -20,7 +20,7 @@ body {
   min-height: 100svh;
   display: grid;
   place-items: center;
-  background-color: var(--main-color);
+  background:linear-gradient(230deg,white,orange,orange,white,orange,orange);
   color: var(--dark-color);
 }
 
@@ -34,6 +34,7 @@ button {
 button:active,
 button:hover {
   color: var(--main-color);
+  color: white;
 }
 
 input {
@@ -63,7 +64,7 @@ input::-webkit-slider-thumb {
 }
 
 .player {
-  background-color: var(--light-color);
+  background:linear-gradient(230deg ,orange,orange,white,orange);
   width: 90%;
   max-width: var(--width);
   padding: 20px;
@@ -180,8 +181,11 @@ input::-webkit-slider-thumb {
 }
 
 .playlist.show {
+  
   transform: none;
+
 }
+
 
 .playlist-header {
   position: relative;
@@ -196,6 +200,7 @@ input::-webkit-slider-thumb {
   top: 50%;
   transform: translateY(-50%);
 }
+
 
 .playlist-content {
   overflow: hidden auto;
