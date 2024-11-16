@@ -1,12 +1,8 @@
-
-
 const audio = document.getElementById("audio-player");
 
 const ui = {
-
   seekBar: document.querySelector(".seek-slider input"),
   volumeBar: document.querySelector(".volume-slider input"),
-
 
   showPlayListBtn: document.querySelector(".show"),
   hidePlayListBtn: document.querySelector(".hide"),
@@ -22,7 +18,6 @@ const ui = {
   currentTime: document.querySelector(".current-time"),
   duration: document.querySelector(".duration"),
 };
-
 
 const setupEventListeners = () => {
   document.addEventListener("DOMContentLoaded", loadTrack);
@@ -40,8 +35,6 @@ const setupEventListeners = () => {
   audio.addEventListener("loadedmetadata", updateTrackInfo);
   audio.addEventListener("durationchange", updateDuration);
 };
-
-
 
 const updateVolume = () => {
   audio.volume = ui.volumeBar.value / 100;
@@ -114,7 +107,6 @@ const hidePlayList = () => {
 };
 
 setupEventListeners();
-
 
 const state = {
   activeTrack: 0,

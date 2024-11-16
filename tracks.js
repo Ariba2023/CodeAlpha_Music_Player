@@ -1,14 +1,10 @@
-
-
-
 const tracks = [
   {
-    artwork:
-      "https://i.ytimg.com/vi/YtRNZ2TCxLY/maxresdefault.jpg",
+    artwork: "https://i.ytimg.com/vi/YtRNZ2TCxLY/maxresdefault.jpg",
     name: "Mein Haar Gaiyaan",
     artist: "Naseebo lal and Hassan ali",
     path: "./media/audio.mp3",
-    category: 'category1',
+    category: "category1",
   },
   {
     artwork:
@@ -16,7 +12,7 @@ const tracks = [
     name: "Chal diye tum kaha pey",
     artist: "Usama ali and Ahad khan",
     path: "./media/Chal-Diye-Tum-Kahan(PagalWorld).mp3",
-    category: 'category1',
+    category: "category1",
   },
   {
     artwork:
@@ -24,16 +20,16 @@ const tracks = [
     name: "Mango DIve",
     artist: "By Top Flow",
     path: "./media/mango-sundive.mp3",
-    category: 'category2',
+    category: "category2",
   },
-  
+
   {
     artwork:
       "https://cdn.pixabay.com/audio/2022/05/27/23-46-21-714_200x200.jpg",
     name: "Best Time",
     artist: "FAS Sounds",
     path: "./media/112194.mp3",
-    category: 'category3F',
+    category: "category3F",
   },
   {
     artwork:
@@ -41,7 +37,7 @@ const tracks = [
     name: "Drive Breakbeat",
     artist: "Rockot",
     path: "./media/173062.mp3",
-    category: 'category4',
+    category: "category4",
   },
   {
     artwork:
@@ -49,7 +45,7 @@ const tracks = [
     name: "Tokyo Cafe",
     artist: "TVARI",
     path: "./media/159065.mp3",
-    category: 'category5',
+    category: "category5",
   },
   {
     artwork:
@@ -57,7 +53,7 @@ const tracks = [
     name: "Smoke",
     artist: "Soul Prod Music",
     path: "./media/143172.mp3",
-    category: 'category6',
+    category: "category6",
   },
   // Add more tracks as needed
 ];
