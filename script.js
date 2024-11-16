@@ -1,24 +1,19 @@
-//* state
 
-// const state = { activeTrack: 0, initPlay: false };
-
-//* selectors
 
 const audio = document.getElementById("audio-player");
 
 const ui = {
-  // sliders
+
   seekBar: document.querySelector(".seek-slider input"),
   volumeBar: document.querySelector(".volume-slider input"),
 
-  // buttons
+
   showPlayListBtn: document.querySelector(".show"),
   hidePlayListBtn: document.querySelector(".hide"),
   prevBtn: document.querySelector(".prev"),
   nextBtn: document.querySelector(".next"),
   playPauseBtn: document.querySelector(".play-pause"),
 
-  // text and image
   playList: document.querySelector(".playlist"),
   playListContent: document.querySelector(".playlist-content"),
   artwork: document.querySelector(".artwork"),
@@ -28,12 +23,10 @@ const ui = {
   duration: document.querySelector(".duration"),
 };
 
-//* event listeners
 
 const setupEventListeners = () => {
   document.addEventListener("DOMContentLoaded", loadTrack);
 
-  // player events
   ui.playPauseBtn.addEventListener("click", playPauseTrack);
   ui.seekBar.addEventListener("input", updateSeek);
   ui.volumeBar.addEventListener("input", updateVolume);
@@ -42,14 +35,13 @@ const setupEventListeners = () => {
   ui.showPlayListBtn.addEventListener("click", showPlayList);
   ui.hidePlayListBtn.addEventListener("click", hidePlayList);
 
-  // audio events
   audio.addEventListener("ended", nextTrack);
   audio.addEventListener("timeupdate", updateTime);
   audio.addEventListener("loadedmetadata", updateTrackInfo);
   audio.addEventListener("durationchange", updateDuration);
 };
 
-//* event handlers
+
 
 const updateVolume = () => {
   audio.volume = ui.volumeBar.value / 100;
@@ -121,32 +113,9 @@ const hidePlayList = () => {
   ui.playList.classList.remove("show");
 };
 
-// const renderPlayList = () => {
-//   ui.playListContent.innerHTML = "";
-
-//   tracks.forEach((track, index) => {
-//     const isActive = index === state.activeTrack;
-//     const icon = audio.paused ? "bi-play-fill" : "bi-pause-fill";
-
-//     const item = document.createElement("div");
-//     item.classList.add("item");
-//     item.classList.toggle("active", isActive);
-//     item.addEventListener("click", () => playTrack(index));
-//     item.innerHTML = `
-//     <img src="${track.artwork}" alt="${track.name}" />
-//     <div class="item-detail">
-//       <h4>${track.name}</h4>
-//       <p>${track.artist}</p>
-//     </div>
-//     ${isActive ? `<button><i class="bi ${icon}"></i></button>` : ""}`;
-
-//     ui.playListContent.appendChild(item);
-//   });
-// };
-
 setupEventListeners();
 
-// Additional state for search and category
+
 const state = {
   activeTrack: 0,
   initPlay: false,
@@ -154,7 +123,6 @@ const state = {
   categoryFilter: "all",
 };
 
-// Update renderPlayList function
 const renderPlayList = () => {
   ui.playListContent.innerHTML = "";
 
@@ -187,7 +155,6 @@ const renderPlayList = () => {
   });
 };
 
-// Event listeners for search and category
 const setupSearchAndFilter = () => {
   const searchInput = document.querySelector(".search");
   const categoryFilter = document.querySelector(".category-filter");
@@ -204,5 +171,4 @@ const setupSearchAndFilter = () => {
 };
 
 renderPlayList();
-// Call the new setup function
 setupSearchAndFilter();

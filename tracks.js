@@ -1,22 +1,4 @@
-//* Track Source: PixaBay
 
-// const tracks = [
-//   {
-//     artwork:
-//       "https://i.ytimg.com/vi/YtRNZ2TCxLY/maxresdefault.jpg",
-//     name: "Mein Haar Gaiyaan",
-//     artist: "Naseebo lal and Hassan ali",
-//     path: "./media/audio.mp3",
-//   },
-//   {
-//     artwork:
-//       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT46-Cjc3qjK_CirMzZq-j2hMQLyE1vRTI9Uw&s",
-//     name: "Chal diye tum kaha pey",
-//     artist: "Usama ali and Ahad khan",
-//     path: "./media/Chal-Diye-Tum-Kahan(PagalWorld).mp3",
-//   },
-  
-// ];
 
 
 const tracks = [
